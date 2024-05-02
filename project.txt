@@ -1,0 +1,4 @@
+- npm install classnames 
+- npm install react-icons --save
+- npm install sass
+- npm install @next/font%    

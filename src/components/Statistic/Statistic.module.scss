@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-end;
+  margin: 0 20px;
+  ul li {
+    font-size: 18px;
+    list-style: none;
+  }
+}
