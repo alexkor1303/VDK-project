@@ -1,9 +1,30 @@
 .wrapper {
-  height: 500px;
-  padding: 0 10px;
+  padding: var(--padding-standart);
+  color: var(--black);
 }
-.subhead {
+.subheadSection {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--margin-standart);
+  .dateBlock {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    gap: 10px;
+    .dateIcon {
+      &:hover {
+        cursor: pointer;
+        fill: var(--orange);
+      }
+    }
+  }
+}
+.projectsSection {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  height: 550px;
+  overflow: auto;
+  border: 5px solid var(--orange);
 }

@@ -1,0 +1,54 @@
+.projectBlock {
+  display: grid;
+  grid-template-areas:
+    "mainInfo mainInfo"
+    "description description";
+  border-bottom: 5px solid var(--orange);
+}
+.projectMainInfo {
+  grid-area: mainInfo;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding-standart);
+  width: 100%;
+  font-size: 20px;
+  .rightSide {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    .infoIcon {
+      cursor: pointer;
+      &:hover {
+        fill: var(--orange);
+      }
+    }
+  }
+}
+.activeMainInfo {
+  background-color: var(--orange);
+  p {
+    color: white;
+  }
+  .rightSide {
+    .infoIcon {
+      fill: white;
+      &:hover {
+        fill: white;
+      }
+    }
+  }
+}
+
+.description {
+  grid-area: description;
+  display: flex;
+  padding: 10px;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}
