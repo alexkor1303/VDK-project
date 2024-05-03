@@ -1,3 +1,41 @@
 .wrapper {
-  min-height: 600px;
+  padding: 0px var(--padding-standart);
+}
+.subHead {
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--margin-standart);
+}
+.createSection {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  &:hover .createIcon {
+    fill: white;
+  }
+}
+.mainContent {
+  min-height: 550px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  .sectionTitle {
+    color: var(--orange);
+  }
+  .listSection {
+    width: 50%;
+  }
+  .statisticSection {
+    width: 50%;
+    align-self: flex-end;
+    ul {
+      margin-top: 10px;
+      li {
+        margin-bottom: 10px;
+        list-style: none;
+      }
+    }
+  }
 }
