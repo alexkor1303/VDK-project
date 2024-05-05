@@ -46,13 +46,34 @@ export const ProjectElem = (project: ProjectElemProps) => {
         {active && (
           <section className={style.description}>
             <ul>
-              <li>Руководитель проекта : {project.manager}</li>
-              <li>Итоговая себестоимость : {project.costPrice} руб.</li>
-              <li>Длительность работы над проектом : {project.days} дней.</li>
               <li>
-                Рабочих задействовано : {project.extraInfo.personal} человек.
+                Руководитель проекта :
+                <span className={style.importantInfo}> {project.manager}</span>
               </li>
-              <li>Человеко-часов затрачено : {project.personalHours} часов.</li>
+              <li>
+                Итоговая себестоимость :{" "}
+                <span className={style.importantInfo}>
+                  {project.costPrice} руб.
+                </span>
+              </li>
+              <li>
+                Длительность работы над проектом :{" "}
+                <span className={style.importantInfo}>
+                  {project.days} дней.
+                </span>
+              </li>
+              <li>
+                Рабочих задействовано :{" "}
+                <span className={style.importantInfo}>
+                  {project.extraInfo.personal} человек.
+                </span>
+              </li>
+              <li>
+                Человеко-часов затрачено :{" "}
+                <span className={style.importantInfo}>
+                  {project.personalHours} часов.
+                </span>
+              </li>
             </ul>
           </section>
         )}

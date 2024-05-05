@@ -25,7 +25,15 @@
     color: var(--orange);
   }
   .listSection {
-    width: 50%;
+    width: 500px;
+    min-width: fit-content;
+    .listContent {
+      width: auto;
+      border: 5px solid var(--orange);
+      margin-top: 10px;
+      max-height: 400px;
+      overflow: scroll;
+    }
   }
   .statisticSection {
     width: 50%;

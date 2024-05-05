@@ -1,0 +1,28 @@
+.background {
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.588);
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  overflow-y: auto;
+
+  &.open {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.window {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  min-width: 500px;
+  min-height: 400px;
+  background-color: white;
+  padding: var(--padding-standart);
+}

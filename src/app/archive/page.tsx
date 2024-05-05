@@ -1,6 +1,6 @@
 import { LinkElem, ProjectElem } from "@/components";
 import { MdDateRange } from "react-icons/md";
-import { ProjectDataExample } from "@/components/ProjectBlock/ProjectDataExample";
+import { ProjectDataExample } from "../../../DataExample/ProjectDataExample";
 import style from "./page.module.scss";
 
 const today = new Date().toLocaleDateString();

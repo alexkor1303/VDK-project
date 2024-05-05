@@ -5,3 +5,5 @@ export * from "./Statistic/Statistic";
 export * from "./LinkElem/LinkElem";
 export * from "./ProjectBlock/ProjecBlock";
 export * from "./ButtonElem/ButtonElem";
+export * from "./PersonalBlock/PersonalBlock";
+export * from "./ModalWindow/ModalWindow";
