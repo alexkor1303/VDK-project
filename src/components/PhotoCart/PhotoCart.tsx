@@ -1,11 +1,14 @@
-import Image from "next/image";
+//style
 import style from "./PhotoCart.module.scss";
 
+//Props
 interface PhotoCartProps {
   image: string;
   text: string;
   page: string;
 }
+
+//component
 export const PhotoCart = ({ image, text, page }: PhotoCartProps) => {
   return (
     <a href={page}>
@@ -16,7 +19,6 @@ export const PhotoCart = ({ image, text, page }: PhotoCartProps) => {
             backgroundImage: `url(${image})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            backdropFilter: "blur(5px)",
           }}></div>
         <p>{text.toUpperCase()}</p>
       </div>

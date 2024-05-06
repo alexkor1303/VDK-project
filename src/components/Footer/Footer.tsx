@@ -1,5 +1,9 @@
 import Link from "next/link";
+
+//style
 import style from "./Footer.module.scss";
+
+//components & icons
 import { FaGithub, FaCopyright } from "react-icons/fa6";
 
 export const Footer = () => {

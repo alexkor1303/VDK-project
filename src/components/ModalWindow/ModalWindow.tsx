@@ -1,14 +1,21 @@
 import React from "react";
+
+//style & modules
 import style from "./ModalWindow.module.scss";
 import cn from "classnames";
+
+//components & icon
 import { ButtonElem } from "../index";
 import { IoIosClose } from "react-icons/io";
 
+//Props
 interface ModalWindowProps {
   children: React.ReactNode;
   closeModalWindow: () => void;
   state: boolean;
 }
+
+//component
 export const ModalWindow = ({
   children,
   state,

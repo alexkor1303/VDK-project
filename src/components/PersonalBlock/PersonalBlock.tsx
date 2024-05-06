@@ -1,11 +1,15 @@
 "use client";
+
+//styles & module
 import style from "./PersonalBlock.module.scss";
 import cn from "classnames";
 
+//components & icons
 import { IoPersonSharp } from "react-icons/io5";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { useState } from "react";
 
+//Props
 interface PersonalBlockProps {
   id: number;
   name: string;
@@ -14,6 +18,8 @@ interface PersonalBlockProps {
   post: string;
   salary: number;
 }
+
+//component
 export const PersonalBlock = ({ ...data }: PersonalBlockProps) => {
   const [active, setActive] = useState(false);
   return (

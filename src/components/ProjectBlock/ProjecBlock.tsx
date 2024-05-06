@@ -1,10 +1,13 @@
 "use client";
+//styles & module
 import React from "react";
 import style from "./ProjecBlock.module.scss";
 import cn from "classnames";
 
+//icons
 import { IoMdInformationCircleOutline } from "react-icons/io";
 
+//props
 interface ProjectElemProps {
   id: number;
   name: string;
@@ -25,6 +28,7 @@ interface ProjectElemProps {
   };
 }
 
+//component
 export const ProjectElem = (project: ProjectElemProps) => {
   const [active, setActive] = React.useState(false);
   return (
@@ -46,34 +50,15 @@ export const ProjectElem = (project: ProjectElemProps) => {
         {active && (
           <section className={style.description}>
             <ul>
+              <li>Руководитель проекта : {project.manager}</li>
               <li>
-                Руководитель проекта :
-                <span className={style.importantInfo}> {project.manager}</span>
+                Итоговая себестоимость : {project.costPrice} руб. Длительность
               </li>
+              <li>работы над проектом : {project.days} дней.</li>
               <li>
-                Итоговая себестоимость :{" "}
-                <span className={style.importantInfo}>
-                  {project.costPrice} руб.
-                </span>
+                Рабочих задействовано : {project.extraInfo.personal} человек.
               </li>
-              <li>
-                Длительность работы над проектом :{" "}
-                <span className={style.importantInfo}>
-                  {project.days} дней.
-                </span>
-              </li>
-              <li>
-                Рабочих задействовано :{" "}
-                <span className={style.importantInfo}>
-                  {project.extraInfo.personal} человек.
-                </span>
-              </li>
-              <li>
-                Человеко-часов затрачено :{" "}
-                <span className={style.importantInfo}>
-                  {project.personalHours} часов.
-                </span>
-              </li>
+              <li>Человеко-часов затрачено : {project.personalHours} часов.</li>
             </ul>
           </section>
         )}

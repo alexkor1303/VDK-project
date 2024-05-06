@@ -1,14 +1,19 @@
 "use client";
 import { useState } from "react";
+
+//data & style
 import { PersonalDataExample } from "../../../DataExample/PersonalDataExample";
+import style from "./page.module.scss";
+
+//components & icons
 import { LinkElem, ButtonElem, PersonalBlock, ModalWindow } from "@/components";
 import { IoPersonAdd } from "react-icons/io5";
 
-import style from "./page.module.scss";
-
+//page
 export default function NewPerson() {
+  //hooks
   const [openModal, setOpenModal] = useState(false);
-
+  //functions
   function сloseModalWindow() {
     setOpenModal(false);
   }

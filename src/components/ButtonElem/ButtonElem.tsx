@@ -1,8 +1,9 @@
-import React, { ReactNode } from "react";
+import React from "react";
+
 import style from "./ButtonElem.module.scss";
-import cn from "classnames";
+
 interface ButtonElemProps {
-  children: ReactNode;
+  children: React.ReactNode;
   handleEvent?: () => void;
 }
 export const ButtonElem = ({

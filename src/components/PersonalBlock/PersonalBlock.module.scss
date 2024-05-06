@@ -10,16 +10,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  .leftSide {
-    display: flex;
-    gap: 5px;
-  }
-  .infoIcon {
-    &:hover {
-      cursor: pointer;
-      fill: var(--orange);
-    }
-  }
   &.active {
     background-color: var(--orange);
     p {
@@ -31,6 +21,18 @@
     .personalIcon {
       fill: white;
     }
+  }
+}
+
+.leftSide {
+  display: flex;
+  gap: 5px;
+}
+
+.infoIcon {
+  &:hover {
+    cursor: pointer;
+    fill: var(--orange);
   }
 }
 
