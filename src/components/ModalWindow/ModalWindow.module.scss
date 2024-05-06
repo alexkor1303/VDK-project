@@ -16,6 +16,7 @@
     opacity: 1;
   }
 }
+
 .window {
   position: fixed;
   transform: translate(-50%, -50%);
@@ -25,4 +26,9 @@
   min-height: 400px;
   background-color: white;
   padding: var(--padding-standart);
+  box-shadow: 0px 19px 40px 0px var(--black);
+}
+.button {
+  display: flex;
+  justify-content: flex-end;
 }

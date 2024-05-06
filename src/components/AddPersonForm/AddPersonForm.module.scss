@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.title {
+  margin: 0 0 20px 0;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-between;
+  gap: 15px;
+}
+.selectInput {
+  display: flex;
+  justify-content: space-between;
+  select {
+    max-width: 42%;
+  }
+}
+.submit {
+  align-self: center;
+  color: white;
+  width: fit-content;
+}

@@ -24,10 +24,12 @@ export const ModalWindow = ({
   return (
     <div className={cn(style.background, { [style.open]: state === true })}>
       <div className={style.window}>
+        <div className={style.button}>
+          <ButtonElem handleEvent={closeModalWindow}>
+            <IoIosClose fill="white" size={20} />
+          </ButtonElem>
+        </div>
         {children}
-        <ButtonElem handleEvent={closeModalWindow}>
-          <IoIosClose fill="white" />
-        </ButtonElem>
       </div>
     </div>
   );

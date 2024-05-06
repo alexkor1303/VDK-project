@@ -6,34 +6,30 @@ import { PersonalDataExample } from "../../../DataExample/PersonalDataExample";
 import style from "./page.module.scss";
 
 //components & icons
-import { LinkElem, ButtonElem, PersonalBlock, ModalWindow } from "@/components";
-import { IoPersonAdd } from "react-icons/io5";
+import {
+  LinkElem,
+  CreateTitle,
+  PersonalBlock,
+  ModalWindow,
+  AddPersonForm,
+} from "@/components";
 
 //page
 export default function NewPerson() {
   //hooks
   const [openModal, setOpenModal] = useState(false);
   //functions
-  function сloseModalWindow() {
-    setOpenModal(false);
+  function getModal() {
+    setOpenModal(!openModal);
   }
 
   return (
     <div className={style.wrapper}>
+      <ModalWindow state={openModal} closeModalWindow={getModal}>
+        <AddPersonForm title="Создать бойца" />
+      </ModalWindow>
       <div className={style.subHead}>
-        <section className={style.createSection}>
-          <h1>Добавить сотрудника</h1>
-          <ButtonElem handleEvent={() => setOpenModal(true)}>
-            <IoPersonAdd
-              className={style.createIcon}
-              fill={`var(--orange)`}
-              size={15}
-            />
-          </ButtonElem>
-          <ModalWindow state={openModal} closeModalWindow={сloseModalWindow}>
-            text
-          </ModalWindow>
-        </section>
+        <CreateTitle title="Добавить сотрудника" buttonClick={getModal} />
         <LinkElem href="/" text="go back" />
       </div>
       <div className={style.mainContent}>

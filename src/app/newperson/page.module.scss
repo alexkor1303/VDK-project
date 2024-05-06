@@ -8,14 +8,7 @@
   align-items: center;
   margin-bottom: var(--margin-standart);
 }
-.createSection {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  &:hover .createIcon {
-    fill: white;
-  }
-}
+
 .mainContent {
   min-height: 550px;
   display: flex;
