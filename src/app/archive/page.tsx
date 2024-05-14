@@ -1,11 +1,14 @@
 //data & style file
 import style from "./page.module.scss";
 import { ProjectDataExample } from "../../../DataExample/ProjectDataExample";
+
 //components & icons
 import { LinkElem, ProjectElem } from "@/components";
 import { MdDateRange } from "react-icons/md";
+
 //constant
 const today = new Date().toLocaleDateString();
+
 //page
 export default function Archive() {
   return (

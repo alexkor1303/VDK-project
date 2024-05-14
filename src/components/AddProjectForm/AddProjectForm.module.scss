@@ -1,0 +1,15 @@
+.wrapper {
+  max-height: 500px;
+}
+.formWrapper {
+  background-color: red;
+}
+.formMainInfo {
+  display: flex;
+  flex-direction: column;
+}
+.workerList {
+  max-height: 150px;
+  overflow: scroll;
+  background-color: aqua;
+}

@@ -8,6 +8,7 @@ export * from "./ModalWindow/ModalWindow";
 export * from "./ProjectBlock/ProjecBlock";
 export * from "./PersonalBlock/PersonalBlock";
 export * from "./AddPersonForm/AddPersonForm";
+export * from "./AddProjectForm/AddProjectForm";
 //littleElems
 export * from "./CreateTitle/CreateTitle";
 export * from "./ButtonElem/ButtonElem";

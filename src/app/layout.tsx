@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="ru">
       <body className={unbounded.className}>
         <Header />
-        {children}
+        <div className="wrapper">{children}</div>
         <Footer />
       </body>
     </html>

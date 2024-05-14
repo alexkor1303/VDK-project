@@ -12,7 +12,8 @@ interface AddPersonProps {
   title: string;
 }
 export const AddPersonForm = ({ title }: AddPersonProps) => {
-  //dataChecker
+  const [value, setValue] = React.useState("");
+  //dataChecker delete after
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -22,6 +23,7 @@ export const AddPersonForm = ({ title }: AddPersonProps) => {
     });
     console.log(JSON.stringify(jsonObject));
   };
+
   //component
   return (
     <div className={style.wrapper}>
@@ -48,8 +50,7 @@ export const AddPersonForm = ({ title }: AddPersonProps) => {
           </select>
         </label>
         <InputElem id="get-salary" title="Оплата в час :" name="salary" />
-		
-        <ButtonElem className={style.submit} handleEvent={() => <input type="submit" value="Создать" />}>
+        <ButtonElem type="submit" className={style.submit}>
           Создать
         </ButtonElem>
       </form>

@@ -20,23 +20,24 @@
   .listSection {
     width: 500px;
     min-width: fit-content;
+    align-self: flex-end;
     .listContent {
       width: auto;
       border: 5px solid var(--orange);
       margin-top: 10px;
-      max-height: 400px;
+      max-height: 500px;
       overflow: scroll;
     }
   }
   .statisticSection {
-    width: 50%;
+    width: 40%;
     align-self: flex-end;
     ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
       margin-top: 10px;
-      li {
-        margin-bottom: 10px;
-        list-style: none;
-      }
+      list-style: none;
     }
   }
 }
