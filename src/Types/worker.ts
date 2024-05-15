@@ -3,5 +3,5 @@ export type Workertype = {
   //   secondName: string;
   //   surname: string;
   //   post: string;
-  salary: string;
+  hours: string;
 };

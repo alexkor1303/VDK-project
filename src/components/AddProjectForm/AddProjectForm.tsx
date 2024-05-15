@@ -36,7 +36,7 @@ export const AddProjectForm = () => {
       ...workerList,
       {
         name: selectWorker,
-        salary: inputWorker,
+        hours: inputWorker,
       },
     ]);
     setSelectWorker("");
@@ -57,17 +57,28 @@ export const AddProjectForm = () => {
   return (
     <div className={style.wrapper}>
       <form action={"#"} method="post" className={style.formWrapper}>
-        <section className={style.formMainInfo}>
+        <div className={style.formBlock}>
           <label htmlFor="projectName">Название проекта :</label>
           <input id="projectName" type="text" name="projectName" />
-
+        </div>
+        <div className={style.formBlock}>
           <label htmlFor="projectDirector">Руководитель проекта :</label>
           <input id="projectDirector" type="text" name="projectDirector" />
-
-          <label htmlFor="projectDirector">Руководитель проекта :</label>
-          <input id="projectDirector" type="text" name="projectDirector" />
-        </section>
-        <section className={style.formWorkerInfo}>
+        </div>
+        <div className={style.formBlock}>
+          <label htmlFor="projectDirector">Дата старта проекта :</label>
+          <input id="projectDirector" type="date" name="projectDirector" />
+        </div>
+        <div className={style.formBlock}>
+          <label htmlFor="projectDirector">Дата окончания проекта :</label>
+          <input id="projectDirector" type="date" name="projectDirector" />
+        </div>
+        <label
+          htmlFor="
+			workerList">
+          Добавить сотрудника :
+        </label>
+        <div className={(style.formBlock, style.formBigBLock)}>
           <select
             name={`personName`}
             id="workerList"
@@ -87,18 +98,24 @@ export const AddProjectForm = () => {
             value={inputWorker}
             placeholder="часов отработано... "
           />
+          <ButtonElem handleEvent={handleAddWorker}>
+            <IoPersonAdd fill="white" />
+          </ButtonElem>
+        </div>
+        <p>Список сотрудников :</p>
+        <section className={style.workerList}>
+          <ul>
+            {workerList.map((worker) => (
+              <li key={worker.name}>
+                Сотрудник :{worker.name} Часов :{worker.hours}
+              </li>
+            ))}
+          </ul>
         </section>
-        <ButtonElem handleEvent={handleAddWorker}>
-          <IoPersonAdd fill="white" />
+        <ButtonElem type="submit" className={style.submitBtn}>
+          Создать проект
         </ButtonElem>
       </form>
-      <section className={style.workerList}>
-        <ul>
-          {workerList.map((worker) => (
-            <li key={worker.name}>{worker.name}</li>
-          ))}
-        </ul>
-      </section>
     </div>
   );
 };
