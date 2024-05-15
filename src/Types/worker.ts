@@ -1,7 +1,8 @@
 export type Workertype = {
+  id: string;
   name: string;
-  //   secondName: string;
-  //   surname: string;
-  //   post: string;
-  hours: string;
+  post: string;
+  salary: number;
+  hours: number;
+  sum: number;
 };

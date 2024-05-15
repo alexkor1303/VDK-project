@@ -15,3 +15,4 @@ export * from "./ButtonElem/ButtonElem";
 export * from "./LinkElem/LinkElem";
 export * from "./Statistic/Statistic";
 export * from "./InputElem/InputElem";
+export * from "./Input/Input";
