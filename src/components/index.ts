@@ -1,3 +1,5 @@
+import { AddPersonBlock } from "./AddPersonBlock/AddPersonBlock";
+
 //layoutComponents
 export * from "./Header/Header";
 export * from "./Footer/Footer";
@@ -16,3 +18,4 @@ export * from "./LinkElem/LinkElem";
 export * from "./Statistic/Statistic";
 export * from "./InputElem/InputElem";
 export * from "./Input/Input";
+export * from "./AddPersonBlock/AddPersonBlock";
