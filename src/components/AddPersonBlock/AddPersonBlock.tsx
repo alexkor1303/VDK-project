@@ -2,7 +2,8 @@ import React from "react";
 import { PersonData } from "@/Types/worker";
 import style from "./AddPersonBlock.module.scss";
 import cn from "classnames";
-
+import { ButtonElem } from "..";
+import { IoPersonAdd } from "react-icons/io5";
 interface AddPersonBlockProps {
   id: string;
   selectValue: { id: string; name: string; post: string; salary: string };
@@ -13,6 +14,7 @@ interface AddPersonBlockProps {
   inputError: boolean;
   errorClassName: string;
   personalData: PersonData[];
+  submitPerson: () => void;
 }
 export const AddPersonBlock = ({
   id,
@@ -24,6 +26,7 @@ export const AddPersonBlock = ({
   personalData,
   selectValue,
   inputValue,
+  submitPerson,
 }: AddPersonBlockProps) => {
   return (
     <div>
@@ -54,6 +57,9 @@ export const AddPersonBlock = ({
         placeholder="часов отработано... "
         value={inputValue}
       />
+      <ButtonElem handleEvent={submitPerson}>
+        <IoPersonAdd fill="white" />
+      </ButtonElem>
     </div>
   );
 };

@@ -1,20 +1,17 @@
 "use client";
 import { useState } from "react";
-
 //data and types
 import { Workertype } from "@/Types/worker";
 import { PersonalDataExample } from "../../../DataExample/PersonalDataExample";
-
 //Components
 import { ButtonElem, Input, AddPersonBlock } from "@/components";
-
-//styles and icons
-import { IoPersonAdd } from "react-icons/io5";
+//styles
 import style from "./AddProjectForm.module.scss";
 import cn from "classnames";
-//component
+import { json } from "stream/consumers";
+
 export const AddProjectForm = () => {
-  ///hooks///
+  ///states//
   const [personList, setPersonList] = useState<Workertype[]>([]);
   const [projectName, setProjectName] = useState("");
   const [projectDirector, setProjectDirector] = useState("");
@@ -31,20 +28,21 @@ export const AddProjectForm = () => {
   const [inputError, setInputError] = useState(false);
 
   //functions
+
   const calculatePersonSum = (salary: string, hours: string) => {
     return Number(salary) * Number(hours);
   };
-  //handleFunctions
+
   const handleInputChange =
     (setter: React.Dispatch<React.SetStateAction<string>>) =>
     (event: React.ChangeEvent<HTMLInputElement>) => {
       setter(event.target.value);
     };
 
-  const handleChangeSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const changeSelectPerson = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const value = event.target.value;
     const [id, post, salary, secondName, name] = value.split("-");
-    const fullname = `${secondName}  ${name}`;
+    const fullname = `${secondName} ${name}`;
     setSelectPerson({
       id: id,
       post: post,
@@ -53,11 +51,11 @@ export const AddProjectForm = () => {
     });
   };
 
-  const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const changeInputPerson = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputPerson(event.target.value);
   };
 
-  const handleAddWorker = () => {
+  const handleAddPerson = () => {
     const newPerson: Workertype = {
       id: selectPerson.id,
       name: selectPerson.name,
@@ -66,9 +64,7 @@ export const AddProjectForm = () => {
       hours: inputPerson,
       sum: calculatePersonSum(selectPerson.salary, inputPerson),
     };
-
     setPersonList([...personList, newPerson]);
-
     setSelectPerson({
       id: "",
       post: "",
@@ -77,10 +73,27 @@ export const AddProjectForm = () => {
     });
     setInputPerson("");
   };
-  console.log(personList);
+  //remake this shit
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault(); // предотвращаем стандартное поведение отправки формы
+    const formData = {
+      projectName,
+      projectDirector,
+      projectStartDate,
+      projectEndDate,
+      personList,
+    };
+    const jsonData = JSON.stringify(formData);
+    console.log("Данные, которые будут отправлены:", jsonData);
+  };
+
   return (
     <div className={style.wrapper}>
-      <form action={"#"} method="post" className={style.formWrapper}>
+      <form
+        action={"#"}
+        method="post"
+        className={style.formWrapper}
+        onSubmit={handleSubmit}>
         <Input
           className={style.formBlock}
           description="Название проекта :"
@@ -118,18 +131,16 @@ export const AddProjectForm = () => {
         {/* STOP */}
         <AddPersonBlock
           id="PersonList"
-          onChangeSelect={handleChangeSelect}
-          onChangeInput={handleChangeInput}
+          onChangeSelect={changeSelectPerson}
+          onChangeInput={changeInputPerson}
           selectValue={selectPerson}
           inputValue={inputPerson}
           selectError={selectError}
           inputError={inputError}
           errorClassName={style.error}
           personalData={PersonalDataExample}
+          submitPerson={handleAddPerson}
         />
-        <ButtonElem handleEvent={handleAddWorker}>
-          <IoPersonAdd fill="white" />
-        </ButtonElem>
         <p>Список сотрудников :</p>
         <section className={style.workerList}>
           <ul>
