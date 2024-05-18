@@ -20,15 +20,11 @@ export const CreateTitle = ({
       <p>{title}</p>
       <ButtonElem handleEvent={buttonClick}>
         {image === "person" ? (
-          <IoPersonAdd
-            className={style.createIcon}
-            fill={`var(--orange)`}
-            size={15}
-          />
+          <IoPersonAdd className={style.createIcon} fill="white" size={15} />
         ) : (
           <LiaFileInvoiceDollarSolid
             className={style.createIcon}
-            fill={`var(--orange)`}
+            fill="white"
             size={15}
           />
         )}

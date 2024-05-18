@@ -1,18 +1,9 @@
-"use client";
-import { useState } from "react";
-
 //data & style
 import { PersonalDataExample } from "../../../DataExample/PersonalDataExample";
 import style from "./page.module.scss";
 
 //components & icons
-import {
-  LinkElem,
-  CreateTitle,
-  PersonalBlock,
-  ModalWindow,
-  AddPersonForm,
-} from "@/components";
+import { ButtonElem, ContentBlock, Input } from "@/components";
 
 //functions
 const postFind = (name: string) => {
@@ -25,44 +16,68 @@ const postFind = (name: string) => {
 
 //page
 export default function NewPerson() {
-  //hooks
-  const [openModal, setOpenModal] = useState(false);
-  //functions
-  function getModal() {
-    setOpenModal(!openModal);
-  }
   return (
     <div className={style.wrapper}>
-      <ModalWindow state={openModal} closeModalWindow={getModal}>
-        <AddPersonForm title="Добавить сотрудника" />
-      </ModalWindow>
-      <div className={style.subHead}>
-        <CreateTitle
-          title="Добавить сотрудника"
-          buttonClick={getModal}
-          image="person"
-        />
-        <LinkElem href="/" text="go back" />
+      <div className={style.subHeader}>
+        <ButtonElem>
+          <a href="/">На главную</a>
+        </ButtonElem>
       </div>
-      <div className={style.mainContent}>
-        <section className={style.listSection}>
-          <p className={style.sectionTitle}>Список сотрудников :</p>
-          <div className={style.listContent}>
-            {PersonalDataExample.map((person) => {
-              return <PersonalBlock key={person.id} {...person} />;
-            })}
-          </div>
-        </section>
-        <section className={style.statisticSection}>
-          <p className={style.sectionTitle}>Статистика сотрудников :</p>
-          <ul>
-            <li>Общее Количество сотрудников : {PersonalDataExample.length}</li>
-            <li>Количество Сварщиков : {postFind("svarka")}</li>
-            <li>Количество Операторов ЧПУ : {postFind("chpuOperator")}</li>
-            <li>Количество Слесарей : {postFind("laserboy")}</li>
-            <li>Количество Маляров : {postFind("Painter")}</li>
-          </ul>
-        </section>
+      <div className={style.main}>
+        <ContentBlock
+          className={style.createPerson}
+          title="Добавить сотрудника">
+          <form action="#">
+            <Input
+              id="personName"
+              name="personName"
+              placeholder="Имя работника"
+            />
+            <Input
+              id="personSecondName"
+              name="personSecondName"
+              placeholder="Отчество работника"
+            />
+            <Input
+              id="personSurname"
+              name="personSurname"
+              placeholder="Фамилия работника"
+            />
+            <Input
+              id="personPost"
+              name="personPost"
+              placeholder="должность работника"
+            />
+            <Input
+              id="personCoast"
+              name="personCoast"
+              placeholder="Оплата в час"
+            />
+            <ButtonElem type="submit">Добавить сотрудника</ButtonElem>
+          </form>
+        </ContentBlock>
+
+        <ContentBlock
+          className={style.activePersonList}
+          title="Список сотрудников">
+          <div className={style.activePersonListInner}>list</div>
+        </ContentBlock>
+
+        <ContentBlock
+          className={style.statisticPersonList}
+          title="Статистика по персоналу">
+          <section className={style.statisticSection}>
+            <ul>
+              <li>
+                Общее Количество сотрудников : {PersonalDataExample.length}
+              </li>
+              <li>Количество Сварщиков : {postFind("svarka")}</li>
+              <li>Количество Операторов ЧПУ : {postFind("chpuOperator")}</li>
+              <li>Количество Слесарей : {postFind("laserboy")}</li>
+              <li>Количество Маляров : {postFind("Painter")}</li>
+            </ul>
+          </section>
+        </ContentBlock>
       </div>
     </div>
   );

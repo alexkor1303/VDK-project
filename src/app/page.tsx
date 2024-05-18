@@ -4,20 +4,16 @@ export default function Home() {
   return (
     <main className={style.main}>
       <div className={style.mainCartSection}>
+        <PhotoCart image="/mkReport.jpeg" text="отчеты" page="/decloration" />
         <PhotoCart
           image="/mkProjectPhoto.jpeg"
-          text="создать  проект"
-          page="/newproject"
+          text="проекты"
+          page="/projects"
         />
         <PhotoCart
           image="/mkPersonPhoto.jpeg"
-          text="добавить  сотрудника"
+          text="работники"
           page="/newperson"
-        />
-        <PhotoCart
-          image="/archivePhoto.jpeg"
-          text="архив  проектов"
-          page="/archive"
         />
       </div>
       <Statistic />

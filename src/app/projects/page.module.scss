@@ -1,0 +1,38 @@
+.subHeader {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.main {
+  display: grid;
+  grid-template-areas:
+    "form active"
+    ". archive";
+  grid-column-gap: 20px;
+}
+
+.createProject {
+  grid-area: form;
+}
+
+.activeProject {
+  grid-area: active;
+  h2 {
+    color: var(--orange);
+  }
+}
+.archiveProject {
+  grid-area: archive;
+  h2 {
+    color: rgb(135, 135, 135);
+  }
+}
+.createProjectForm {
+  height: 220px;
+}
+.list {
+  height: 220px;
+  overflow: scroll;
+}

@@ -1,43 +1,33 @@
 .wrapper {
-  padding: 0px var(--padding-standart);
+  min-height: 200px;
+  display: grid;
+  align-content: center;
 }
-.subHead {
+.subHeader {
   display: flex;
-  height: 50px;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--margin-standart);
+  width: 100%;
+  justify-content: flex-end;
+  margin-bottom: 20px;
 }
-
-.mainContent {
-  min-height: 550px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  .sectionTitle {
-    color: var(--orange);
+.main {
+  display: grid;
+  grid-template-areas:
+    "form personList"
+    "statistic statistic";
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+}
+.createPerson {
+  grid-area: form;
+  height: 300px;
+}
+.activePersonList {
+  grid-area: personList;
+  .activePersonListInner {
+    height: 300px;
+    overflow: scroll;
   }
-  .listSection {
-    width: 500px;
-    min-width: fit-content;
-    align-self: flex-end;
-    .listContent {
-      width: auto;
-      border: 5px solid var(--orange);
-      margin-top: 10px;
-      max-height: 500px;
-      overflow: scroll;
-    }
-  }
-  .statisticSection {
-    width: 40%;
-    align-self: flex-end;
-    ul {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 10px;
-      list-style: none;
-    }
-  }
+}
+.statisticPersonList {
+  grid-area: statistic;
 }

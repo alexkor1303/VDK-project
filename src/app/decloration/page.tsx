@@ -3,7 +3,7 @@ import style from "./page.module.scss";
 import { ProjectDataExample } from "../../../DataExample/ProjectDataExample";
 
 //components & icons
-import { LinkElem, ProjectElem } from "@/components";
+import { ProjectElem } from "@/components";
 import { MdDateRange } from "react-icons/md";
 
 //constant
@@ -18,7 +18,6 @@ export default function Archive() {
           <p>Список выполненных проектов : {today}</p>
           <MdDateRange className={style.dateIcon} size={30} />
         </section>
-        <LinkElem text="go back" href="/" />
       </div>
       <div className={style.projectsSection}>
         {ProjectDataExample.map((project) => {
